@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Iproduct } from '../Models/iproduct';
+import { environment } from '../../environments/environment.generated';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ProductService {
   constructor(private httpclient: HttpClient) {}
-  url: string = 'http://localhost:3000';
+  url: string = (environment && environment.API_BASE_URL) || 'http://localhost:3000';
 
   // ==========get-All-Products================
   getAllProducts(): Observable<Iproduct[]> {
