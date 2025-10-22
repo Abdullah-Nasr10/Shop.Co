@@ -1,0 +1,29 @@
+<div class="container brandPage" style="margin-top: 10rem;">
+    <div class="row">
+
+        <div class="col-12">
+            <div class="w-25 bg-dark p-5 rounded-5 mx-auto brandLogo">
+                <img [src]="brand?.logoImg" [alt]="brand?.name" class="img-fluid w-100">
+            </div>
+        </div>
+        <div class="col-12">
+            @if(filteredBrandProduct.length>0){
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 my-5">
+
+                @for(product of filteredBrandProduct; track $index){
+                <div class="col">
+
+                    <app-product-card [product]="product"></app-product-card>
+                </div>
+                }
+            </div>
+            }
+            @else {
+            <div class="text-center fs-2">No Product in this brand</div>
+            }
+
+
+        </div>
+
+    </div>
+</div>

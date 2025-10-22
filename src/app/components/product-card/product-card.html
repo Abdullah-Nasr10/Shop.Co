@@ -1,0 +1,128 @@
+<div class="card prodCard h-100 shadow p-3 rounded">
+    <!-- ==================prod-Image================== -->
+    <div class="imgContainer position-relative">
+        <img [src]="product.images[0]" class="card-img-top prodImg" [alt]="product.name" />
+        <div class="prodPrice">{{product.price|currency:"EGP":'symbol':'1.0-0' }}</div>
+        <!-- ---------favorite---------- -->
+        <i class="fa-solid fa-heart prodHeart" [ngClass]="{ 'isFav': isFav}" (click)="toggleFavorite()"></i>
+        <!-- -----------stock---------- -->
+        @if(product.stock==0){
+        <div class="position-absolute top-50 start-50 translate-middle bg-danger text-white px-3 py-1 rounded fs-5">
+            Out of Stock
+        </div>
+        }
+    </div>
+    <div class="card-body p-0 pt-3">
+        <h3 class="card-title text-truncate">{{ product.name }}</h3>
+        <!-- ----------------color-size-start--------------- -->
+        <div class="row row-cols-1 mt-3">
+            <!-- ==================prod-Colors================== -->
+            <div class="col card-text prodColors">
+                <h5 class="text-muted">COLORS</h5>
+                <div>
+                    @for(color of product.colors; track $index) {
+                    <span class="prdColor d-inline-block rounded-circle border me-2 position-relative"
+                        [ngStyle]="{'background-color': color}" (click)="selectColor(color)"
+                        [class.selected]="color === selectedColor">
+                        @if(color===selectedColor) {
+                        <i
+                            class="fa-solid fa-check text-dark-emphasis shadow position-absolute top-50 start-50 translate-middle">
+                        </i>
+                        }
+                    </span>
+                    }
+                </div>
+            </div>
+            <!-- ==================prod-Sizes================== -->
+            <div class="col prodSizes">
+                <h5 class="text-muted mb-3">SIZES</h5>
+                <div class="d-flex gap-3">
+                    @for(size of product.sizes; track $index) {
+                    <button class="btn btn-outline-secondary prodSizeBtn" (click)="selectSize(size)"
+                        [class.selected]="size === selectedSize">{{size}}</button>
+                    }
+                </div>
+            </div>
+
+        </div>
+        <!-- ----------------color-size-end--------------- -->
+        <!-- ================prod-Rate================== -->
+        <div class="card-text my-3 fs-4">
+            @for (star of [0,1,2,3,4]; track $index) {
+            <i class="fa-star" [ngClass]="
+                            $index < Math.floor(product.rate)
+                                ? 'fa-solid text-warning'
+                                : $index < product.rate
+                                ? 'fa-regular fa-star-half-stroke text-warning'
+                                : 'fa-regular text-secondary'"></i>
+            }
+            <span class="ms-2 text-secondary">({{ product.rate }})</span>
+        </div>
+        <!-- ==================Add to Cart================== -->
+        <div class="d-flex justify-content-between mt-4">
+
+            <button class="btn btn-outline-warning fs-3 px-4 w-100"
+                [ngStyle]="{'border-radius':'2rem 2rem 1.2rem 1.2rem'}" [disabled]="product.stock==0"
+                (click)="addToCart()">Add</button>
+            <!-- ======details==== -->
+            <button class="btn btn-outline-secondary fs-3 px-4 ms-3"
+                [ngStyle]="{'border-radius':'2rem 2rem 1.2rem 1.2rem'}"
+                (click)="goToDetails(product.id)">Details</button>
+        </div>
+    </div>
+</div>
+
+
+<!-- ===============toasters================= -->
+<!-- ==========added-to-cart-toast========== -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3" style="z-index: 1100;">
+    <div class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true"
+        [ngClass]="{'show': showAddedToast, 'hide': !showAddedToast}">
+        <div class="d-flex">
+            <div class="toast-body fs-5">
+                Product added to cart successfully!
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto fs-5" data-bs-dismiss="toast"
+                aria-label="Close" (click)="showAddedToast = false"></button>
+        </div>
+    </div>
+</div>
+<!-- ==========please-select-toast========== -->
+<div class="toast-container position-fixed end-0 p-3" style="z-index: 1100; bottom: 5rem;">
+    <div class="toast align-items-center text-bg-warning border-0" role="alert" aria-live="assertive" aria-atomic="true"
+        [ngClass]="{'show': ShowpleaseSelectToast, 'hide': !ShowpleaseSelectToast}">
+        <div class="d-flex">
+            <div class="toast-body fs-5">
+                Please select color and size before adding to cart.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto fs-5" data-bs-dismiss="toast"
+                aria-label="Close" (click)="ShowpleaseSelectToast = false"></button>
+        </div>
+    </div>
+</div>
+<!-- ==========added-to-favorites-toast========== -->
+<div class="toast-container position-fixed bottom-0  p-3" style="z-index: 1100; top: 7rem; right: 35%;">
+    <div class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true"
+        [ngClass]="{'show': showAddedToFavoritesToast, 'hide': !showAddedToFavoritesToast}">
+        <div class="d-flex">
+            <div class="toast-body fs-5">
+                Product added to favorites!
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto fs-5" data-bs-dismiss="toast"
+                aria-label="Close" (click)="showAddedToFavoritesToast = false"></button>
+        </div>
+    </div>
+</div>
+<!-- ==========removed-from-favorites-toast========== -->
+<div class="toast-container position-fixed bottom-0  p-3" style="z-index: 1100; top: 7rem; right: 35%;">
+    <div class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true"
+        [ngClass]="{'show': showRemovedFromFavoritesToast, 'hide': !showRemovedFromFavoritesToast}">
+        <div class="d-flex">
+            <div class="toast-body fs-5">
+                Product removed from favorites.
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto fs-5" data-bs-dismiss="toast"
+                aria-label="Close" (click)="showRemovedFromFavoritesToast = false"></button>
+        </div>
+    </div>
+</div>

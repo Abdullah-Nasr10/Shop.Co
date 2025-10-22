@@ -1,1 +1,124 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Satoshi';
+  src: url('assets/fonts/Satoshi-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('assets/fonts/Satoshi-Regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('assets/fonts/Satoshi-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi';
+  src: url('assets/fonts/Satoshi-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Integral CF';
+  src: url('assets/fonts/Fontspring-DEMO-integralcf-regular.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('assets/fonts/Fontspring-DEMO-integralcf-medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('assets/fonts/Fontspring-DEMO-integralcf-bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('assets/fonts/Fontspring-DEMO-integralcf-extrabold.otf') format('opentype');
+  font-weight: 800;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Integral CF';
+  src: url('assets/fonts/Fontspring-DEMO-integralcf-heavyoblique.otf') format('opentype');
+  font-weight: 900;
+  font-style: oblique;
+}
+
+:root {
+  --bg-white-1: #f2f0f1;
+  --bg-white-2: #f0eeed;
+  --text-black-2: #909090;
+  --black: #000;
+  --white: #fff;
+  --red-color: #ff0000;
+  --red-color-light: #fee2e2;
+  --font-1: 'Satoshi', sans-serif;
+  --font-2: 'Integral CF', sans-serif;
+}
+
+.fontIntegral {
+  font-family: var(--font-2);
+}
+
+* {
+  font-family: var(--font-1);
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  //   text-transform: capitalize;
+  transition: all 0.2s ease;
+}
+
+a {
+  text-decoration: none;
+  color: var(--black);
+}
+
+input {
+  outline: none;
+  border: none;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+}
+
+body {
+  color: var(--black);
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+}
+@media (max-width: 575px) {
+  html {
+    font-size: 50%;
+  }
+}

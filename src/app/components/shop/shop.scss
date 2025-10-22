@@ -1,0 +1,24 @@
+.shopPage .applyPrice button {
+  border-radius: 2rem 2rem 1rem 1rem;
+}
+.shopPage .colors span {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3);
+}
+
+// .shopPage .filterContainer {
+// }
+
+// @media (max-width: 991px) {
+//   .shopPage .filterContainer {
+//     position: fixed;
+//     top: 7rem;
+//     left: 0;
+//     width: 25rem;
+//     z-index: 100;
+//     overflow-y: auto;
+//   }
+// }

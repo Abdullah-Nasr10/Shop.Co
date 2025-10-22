@@ -1,0 +1,38 @@
+.prodImages .thumbnail {
+  border-radius: 2rem;
+  cursor: pointer;
+  box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.3);
+}
+.prodImages .thumbnail.selected {
+  border: 0.1rem solid var(--black);
+}
+.prodImages .main-image {
+  border-radius: 2rem;
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3);
+}
+.prodColors .prdColor {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3);
+}
+.prodColors .prdColor.selected {
+  border: 0.1rem solid var(--black) !important;
+  //   box-shadow: 0 0 0.3rem var(--red-color) !important;
+}
+.prodSizes .prodSizeBtn.selected {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.detailsPage .prodHeart {
+  font-size: 2rem;
+  color: var(--red-color-light);
+  cursor: pointer;
+}
+.detailsPage .prodHeart:hover {
+  color: var(--red-color);
+}
+.detailsPage .prodHeart.isFav {
+  color: var(--red-color);
+}

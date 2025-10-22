@@ -1,0 +1,18 @@
+<div class="container mt-4">
+    <h2 class="mb-5 fontIntegral" style="font-size: 3rem;">Products</h2>
+    @if(filteredProducts?.length) {
+
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
+        @for (product of products; track product.id) {
+        <div class="col">
+            <app-product-card [product]="product"></app-product-card>
+        </div>
+        }
+    </div>
+    }
+    @else {
+    <div class="text-center my-5 center" style="height: 50vh;">
+        <h3 class="text-muted">No products found matching the selected filters.</h3>
+    </div>
+    }
+</div>

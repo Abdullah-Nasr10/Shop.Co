@@ -1,0 +1,87 @@
+<div class="container" style="margin-top: 10rem;">
+    <h1 class="mb-5 fontIntegral" style="font-size: 3rem;">Your Cart</h1>
+    <div class="row g-4">
+        @if(cartItems.length) {
+
+        <!-- ===========items-cart================ -->
+        <div class="col-12 col-lg-8 ">
+            <div class="p-5 border border-2 border-dark-subtle rounded-4">
+                @for(item of cartItems; track $index) {
+                <div class="row border-bottom py-3 justify-content-between">
+                    <div class="col-8">
+
+                        <div class="row">
+                            <div class="col-3">
+                                <img [src]="item.image" [alt]="item.productName" class="img-fluid rounded">
+                            </div>
+                            <div class="col-auto">
+                                <h2>{{item.productName}}</h2>
+                                <h3 class="text-muted">Color: {{ item.color }}, Size: {{ item.size }}</h3>
+                                <h3>{{ item.unitPrice * item.quantity | currency:'EGP':'symbol':'1.0-0' }}</h3>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 center">
+                        <div class="row d-flex justify-content-center gap-4">
+
+
+                            <!-- ===================quantity========================= -->
+                            <div class="col-auto d-flex align-items-center">
+                                <div
+                                    class="d-flex align-items-center justify-content-between bg-body-secondary rounded-5 py-2 px-4 gap-3 fs-3">
+                                    <!-- ------------decrease-Quantity----------- -->
+                                    <button class="btn p-0 border-0 bg-transparent" (click)="decreaseQuantity(item)"
+                                        [disabled]="item.quantity === 1">
+                                        <i class="fa-solid fa-minus fs-3"></i>
+                                    </button>
+                                    <!-- ----------quantity---------- -->
+                                    {{item.quantity}}
+                                    <!-- ------------increase-Quantity----------- -->
+                                    <button class="btn p-0 border-0 bg-transparent" (click)="increaseQuantity(item)">
+                                        <i class="fa-solid fa-plus fs-3"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- ====================remov-Icon==================== -->
+                            <div class="col-auto center">
+                                <i class="fa-solid fa-trash fs-2 text-danger" style="cursor: pointer;"
+                                    (click)="removeItem(item)"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                }
+            </div>
+        </div>
+
+        <!-- ===========checkout================ -->
+        <div class="col-12 col-lg-4">
+            <div class="p-5 border border-2 border-dark-subtle rounded-4">
+                <h2 class="fontIntegral mb-5">Order Summary</h2>
+                <div class="d-flex justify-content-between align-items-center text-muted">
+                    <h3>Subtotal</h3>
+                    <h3>{{ totalPrice | currency:'EGP':'symbol':'1.0-0' }}</h3>
+                </div>
+                <div class="d-flex justify-content-between align-items-center text-muted">
+                    <h3>Delivery Fee</h3>
+                    <h3>EGP150</h3>
+                </div>
+                <hr>
+                <div class="d-flex justify-content-between align-items-center ">
+                    <h2>Total</h2>
+                    <h2>{{ totalPrice+150 | currency:'EGP':'symbol':'1.0-0' }}</h2>
+                </div>
+
+                <button class="btn btn-outline-dark fs-2 rounded-4 w-100 mt-5">Checkout</button>
+            </div>
+        </div>
+
+        } @else {
+        <div class="text-center">
+            <h2 class="text-muted fontIntegral">Your cart is empty</h2>
+            <img src="https://res.cloudinary.com/dj1omur11/image/upload/v1760375560/shopping_slskfs.png"
+                class="img-fluid" alt="empty cart">
+        </div>
+        }
+    </div>
+</div>

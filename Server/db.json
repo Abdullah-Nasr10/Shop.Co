@@ -1,0 +1,518 @@
+{
+  "brands": [
+    {
+      "id": "1",
+      "name": "Zara",
+      "logoImg": "https://res.cloudinary.com/dj1omur11/image/upload/v1759598520/zara-logo-1_1_hvfr1w.png"
+    },
+    {
+      "id": "2",
+      "name": "Prada",
+      "logoImg": "https://res.cloudinary.com/dj1omur11/image/upload/v1759598521/prada-logo-1_1_lrmkdb.png"
+    },
+    {
+      "id": "3",
+      "name": "Versace",
+      "logoImg": "https://res.cloudinary.com/dj1omur11/image/upload/v1759598520/Vector_xgtuws.png"
+    },
+    {
+      "id": "4",
+      "name": "Gucci",
+      "logoImg": "https://res.cloudinary.com/dj1omur11/image/upload/v1759598521/gucci-logo-1_1_u6jkjv.png"
+    },
+    {
+      "id": "5",
+      "name": "Calvin Klsin",
+      "logoImg": "https://res.cloudinary.com/dj1omur11/image/upload/v1759598520/Group_yrjpti.png"
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "name": "Pants",
+      "catImg": "https://res.cloudinary.com/dj1omur11/image/upload/v1759606662/Pants_n6detw.png"
+    },
+    {
+      "id": "2",
+      "name": "Shorts",
+      "catImg": "https://res.cloudinary.com/dj1omur11/image/upload/v1759606667/Shorts_fxcbbv.png"
+    },
+    {
+      "id": "3",
+      "name": "Long Sleeve Shirt",
+      "catImg": "https://res.cloudinary.com/dj1omur11/image/upload/v1759606667/LongSleeveShirt_zebr6w.png"
+    },
+    {
+      "id": "4",
+      "name": "Short Sleeve Shirt",
+      "catImg": "https://res.cloudinary.com/dj1omur11/image/upload/v1759606662/ShortSleeveShirt_luqhcm.png"
+    },
+    {
+      "id": "5",
+      "name": "T-Shirt",
+      "catImg": "https://res.cloudinary.com/dj1omur11/image/upload/v1760197773/T-Shirt_gmidgq.png"
+    }
+  ],
+  "products": [
+    {
+      "id": "1",
+      "name": "T-shirt with Tape Details",
+      "categoryId": 5,
+      "brandId": 1,
+      "price": 1199,
+      "rate": 4.5,
+      "stock": 12,
+      "colors": [
+        "black",
+        "khaki",
+        "navy"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598522/prod1.1_xjfvam.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598531/prod1.2_gi0xa9.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1760371720/1760371419223_bn3qtg.png"
+      ],
+      "description": "Comfortable cotton T-shirt with stylish tape details — perfect for casual everyday wear."
+    },
+    {
+      "id": "2",
+      "name": "Skinny Fit Jeans",
+      "categoryId": 1,
+      "brandId": 3,
+      "price": 799,
+      "rate": 4.1,
+      "stock": 20,
+      "colors": [
+        "blue",
+        "black"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598525/prod2.1_sipaun.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598529/prod2.2_sjcrui.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598532/prod2.3_iolrqm.png"
+      ],
+      "description": "Classic skinny fit jeans with a modern cut, ideal for casual outings and daily wear."
+    },
+    {
+      "id": "3",
+      "name": "Checkered Shirt",
+      "categoryId": 3,
+      "brandId": 2,
+      "price": 1599,
+      "rate": 4.7,
+      "stock": 8,
+      "colors": [
+        "blue",
+        "coral",
+        "white"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598527/prod3.1_kp2wl9.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598478/prod3.2_uimivb.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598484/prod3.3_wsup1y.png"
+      ],
+      "description": "Elegant checkered long-sleeve shirt made from premium fabric — great for work or semi-formal occasions."
+    },
+    {
+      "id": "4",
+      "name": "Sleeve Striped T-shirt",
+      "categoryId": 5,
+      "brandId": 5,
+      "price": 899,
+      "rate": 4,
+      "stock": 25,
+      "colors": [
+        "orange",
+        "coral",
+        "navy"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598474/prod4.1_wjwiju.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598477/prod4.2_uarfe2.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598482/prod4.3_fj0jsn.png"
+      ],
+      "description": "Casual short-sleeve T-shirt with striped sleeves — a versatile piece for daily wear."
+    },
+    {
+      "id": "5",
+      "name": "Vertical Striped Shirt",
+      "categoryId": 3,
+      "brandId": 5,
+      "price": 799,
+      "rate": 3.9,
+      "stock": 40,
+      "colors": [
+        "cadetblue",
+        "black",
+        "grey"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598473/prod5.1_lvyg36.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598485/prod5.2_zndzru.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598483/prod5.3_habau8.png"
+      ],
+      "description": "Light and breathable cotton T-shirt with vertical stripes for a modern, relaxed look."
+    },
+    {
+      "id": "6",
+      "name": "Courage Graphic T-shirt",
+      "categoryId": 5,
+      "brandId": 4,
+      "price": 399,
+      "rate": 4.3,
+      "stock": 15,
+      "colors": [
+        "orange",
+        "blue",
+        "black"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598480/prod6.1_bi3nj2.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598485/prod6.2_xhhvtt.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598489/prod6.3_vgj12q.png"
+      ],
+      "description": "Graphic T-shirt featuring a bold 'Courage' print — soft, comfortable, and easy to style."
+    },
+    {
+      "id": "7",
+      "name": "Loose Fit Bermuda Shorts",
+      "categoryId": 2,
+      "brandId": 3,
+      "price": 599,
+      "rate": 4.2,
+      "stock": 30,
+      "colors": [
+        "lightblue",
+        "black"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598483/prod7.1_c7yhss.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598488/prod7.2_cpcrcd.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598494/prod7.3_y52kbz.png"
+      ],
+      "description": "Loose-fit Bermuda shorts made from quick-dry fabric — perfect for warm weather and outdoor activities."
+    },
+    {
+      "id": "8",
+      "name": "Faded Skinny Jeans",
+      "categoryId": 1,
+      "brandId": 1,
+      "price": 1699,
+      "rate": 4.6,
+      "stock": 6,
+      "colors": [
+        "black",
+        "white"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598485/prod8.1_wmc4mh.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598494/prod8.2_gztqie.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598500/prod8.3_pmzywu.png"
+      ],
+      "description": "Faded skinny jeans with a slim silhouette and soft denim fabric for all-day comfort."
+    },
+    {
+      "id": "9",
+      "name": "One Life Graphic T-shirt",
+      "categoryId": 5,
+      "brandId": 2,
+      "price": 999,
+      "rate": 4,
+      "stock": 18,
+      "colors": [
+        "olive",
+        "green"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598487/prod9.1_n4v6kt.jpg",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598498/prod9.2_potiht.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598494/prod9.3_xeuice.png"
+      ],
+      "description": "Soft cotton graphic T-shirt with a unique 'One Life' print — casual and trendy."
+    },
+    {
+      "id": "10",
+      "name": "plain shirt",
+      "categoryId": 3,
+      "brandId": 4,
+      "price": 349,
+      "rate": 3.8,
+      "stock": 50,
+      "colors": [
+        "darkkhaki",
+        "white"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598489/prod10.1_tp1vt6.jpg",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598498/prod10.2_q5cj5n.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1760371718/1760371542112_jygpay.png"
+      ],
+      "description": "Plain cotton shirt with a clean, minimal design — easy to match with any outfit."
+    },
+    {
+      "id": "11",
+      "name": "Half-sleeved shirt",
+      "categoryId": 4,
+      "brandId": 1,
+      "price": 850,
+      "rate": 4.4,
+      "stock": 9,
+      "colors": [
+        "beige"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598495/prod11.1_ivgppq.jpg",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598505/prod11.2_cikgak.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598504/prod11.3_muwfx3.png"
+      ],
+      "description": "Half-sleeved shirt made from breathable fabric — ideal for summer and casual wear."
+    },
+    {
+      "id": "12",
+      "name": "plain cotton shirt",
+      "categoryId": 3,
+      "brandId": 4,
+      "price": 699,
+      "rate": 4,
+      "stock": 22,
+      "colors": [
+        "lightblue"
+      ],
+      "sizes": [
+        "M",
+        "L"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598499/prod12.1_athquq.jpg",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598505/prod12.2_ub1j9m.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598510/prod12.3_bupvwu.png"
+      ],
+      "description": "Lightweight plain cotton shirt designed for comfort and effortless style."
+    },
+    {
+      "id": "13",
+      "name": "Polo with Contrast Trims",
+      "categoryId": 5,
+      "brandId": 2,
+      "price": 899,
+      "rate": 4.8,
+      "stock": 0,
+      "colors": [
+        "dodgerblue",
+        "white",
+        "lightgrey"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL",
+        "XXL"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598500/prod13.1_rzeyur.jpg",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598510/prod13.2_m4nkj8.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1760371715/1760371425799_hhrykw.png"
+      ],
+      "description": "Classic polo shirt with contrast trims — a timeless piece for smart-casual looks."
+    },
+    {
+      "id": "14",
+      "name": "Half-sleeved coton shirt",
+      "categoryId": 4,
+      "brandId": 5,
+      "price": 849,
+      "rate": 4.1,
+      "stock": 14,
+      "colors": [
+        "floralwhite",
+        "lightblue"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598506/prod14.1_jzzztq.jpg",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598516/prod14.2_tky8v9.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598514/prod14.3_ycoai0.png"
+      ],
+      "description": "Soft cotton half-sleeved shirt with a light summer feel — great for everyday wear."
+    },
+    {
+      "id": "15",
+      "name": "long-sleeved tricot shirt",
+      "categoryId": 3,
+      "brandId": 3,
+      "price": 1399,
+      "rate": 4.2,
+      "stock": 35,
+      "colors": [
+        "royalblue",
+        "orange",
+        "olive"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598508/prod15.1_ekicfh.jpg",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598520/prod15.2_kg49qu.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598520/prod15.3_of8ur9.png"
+      ],
+      "description": "Long-sleeved tricot shirt with a modern fit — perfect for layering or standalone wear."
+    },
+    {
+      "id": "16",
+      "name": "Black Striped T-shirt",
+      "categoryId": 5,
+      "brandId": 3,
+      "price": 699,
+      "rate": 4,
+      "stock": 11,
+      "colors": [
+        "white",
+        "grey",
+        "black"
+      ],
+      "sizes": [
+        "M",
+        "L",
+        "XL"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598511/prod16.1_zeajmc.jpg",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598519/prod16.2_ryxuii.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598520/prod16.3_ihlg4i.png"
+      ],
+      "description": "Black striped T-shirt made from soft cotton fabric — a simple yet stylish essential."
+    },
+    {
+      "id": "17",
+      "name": "gray Loose Fit Shorts",
+      "categoryId": 2,
+      "brandId": 4,
+      "price": 449,
+      "rate": 3.9,
+      "stock": 28,
+      "colors": [
+        "lightgrey",
+        "navy",
+        "white"
+      ],
+      "sizes": [
+        "S",
+        "M",
+        "L"
+      ],
+      "images": [
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598516/prod17.1_l4kd3a.jpg",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598524/prod17.2_j0hs7b.png",
+        "https://res.cloudinary.com/dj1omur11/image/upload/v1759598529/prod17.3_mkwwqm.png"
+      ],
+      "description": "Loose fit cotton shorts with a light texture — great for relaxed, sporty outfits."
+    }
+  ],
+  "users": [
+    {
+      "id": "1",
+      "name": "Abdullah Nasr",
+      "email": "abdullah@example.com",
+      "password": "123456",
+      "cart": [
+        {
+          "productId": 3,
+          "quantity": 1
+        },
+        {
+          "productId": 5,
+          "quantity": 2
+        }
+      ],
+      "orders": [
+        1
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Mona Ali",
+      "email": "mona@example.com",
+      "password": "qwerty1",
+      "cart": [],
+      "orders": []
+    }
+  ],
+  "favorites": [],
+  "cart": [],
+  "staticAssets": [
+    {
+      "id": "1",
+      "home_img": "https://res.cloudinary.com/dj1omur11/image/upload/v1759598524/HomeImag_kmnke3.png",
+      "noResult": "https://res.cloudinary.com/dj1omur11/image/upload/v1760194782/no_results_iqp99p.jpg",
+      "notFound": "https://res.cloudinary.com/dj1omur11/image/upload/v1760194790/notFound_hmr1i7.jpg",
+      "notFoundPage": "https://res.cloudinary.com/dj1omur11/image/upload/v1760194783/notFoundPage_e12tag.jpg",
+      "cartEmpty": "https://res.cloudinary.com/dj1omur11/image/upload/v1760375560/shopping_slskfs.png"
+    }
+  ]
+}

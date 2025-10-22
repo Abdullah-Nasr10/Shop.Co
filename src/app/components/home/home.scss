@@ -1,0 +1,53 @@
+.homePage {
+  margin-top: -3.7rem;
+}
+.homePage .homeHeader {
+  background-color: var(--bg-white-1) !important;
+  min-height: 80vh;
+}
+.homePage .homeHeader .homeImage {
+  min-height: 80vh;
+}
+.homePage .homeHeader .btn {
+  border-radius: 2rem;
+  padding: 0.7rem 3rem;
+  font-size: 1.8rem;
+}
+
+.homePage .homeBrand {
+  background-color: var(--black);
+  padding-block: 3rem;
+  img {
+    cursor: pointer;
+  }
+}
+
+.homePage .categoryContainer {
+  background-color: var(--bg-white-1);
+  padding: 2rem;
+  border-radius: 3rem;
+}
+.homePage .categoryContainer .categoryImgContainer {
+  position: relative;
+  overflow: hidden;
+  border-radius: 2rem;
+  cursor: pointer;
+}
+.homePage .categoryImgContainer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  // background-color: #00000042;
+  background: linear-gradient(to bottom, #00000000 0%, #00000099 100%);
+  transform: translateY(100%);
+  transition: 0.3s all ease;
+}
+.homePage .categoryImgContainer:hover::before {
+  transform: translateY(0);
+}
+
+@media (max-width: 991px) {
+  .homePage .homeHeader .homeImage {
+    min-height: 40vh;
+  }
+}

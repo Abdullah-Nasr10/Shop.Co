@@ -1,0 +1,28 @@
+.footer {
+  background-color: var(--bg-white-1);
+  position: relative;
+  padding-top: 10rem;
+  margin-top: 10rem !important;
+}
+.footer .socialLinks i {
+  background-color: var(--white);
+  border-radius: 50%;
+  width: 3.3rem;
+  height: 3.3rem;
+  font-size: 2rem;
+}
+.footer .socialLinks i:hover {
+  background-color: var(--black);
+  color: var(--white);
+  cursor: pointer;
+}
+
+.footer .Stay {
+  position: absolute;
+  width: 90%;
+  border-radius: 5rem;
+  padding: 7rem 5rem;
+  top: -7rem;
+  left: 5%;
+  color: var(--white);
+}

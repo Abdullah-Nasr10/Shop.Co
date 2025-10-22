@@ -1,0 +1,113 @@
+<div class="homePage container-fluid">
+    <div class="row">
+        <!-- ==========start-home-header=========== -->
+        <div class="col-12 mt-5 homeHeader">
+            <div class="container">
+                <div class="row row-cols-1 row-cols-lg-2 g-4 align-items-center">
+                    <!-- ==========home-title=========== -->
+                    <div class="col homeTitle">
+                        <h1 class="fontIntegral fw-bolder" style="font-size: 6rem;">find clothes that matches your
+                            style
+                        </h1>
+                        <p class="text-muted fs-4">Browse through our diverse range of meticulously crafted
+                            garments, designed to bring out your individuality and cater to your sense of style. </p>
+                        <button class="btn btn-dark fs-4 my-3" (click)="goToShop()">shop now</button>
+                        <div class="d-flex gap-4 mt-5 text-center">
+                            <div>
+                                <h2 class="fw-bolder">200+</h2>
+                                <h4 class="text-muted">International Brands</h4>
+                            </div>
+                            <div class="box border-start border-end px-3 border-1 border-dark-subtle">
+                                <h2 class="fw-bolder">30,000+</h2>
+                                <h4 class="text-muted">High-Quality Products</h4>
+                            </div>
+                            <div>
+                                <h2 class="fw-bolder">2,000+</h2>
+                                <h4 class="text-muted">Happy Customers</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- ==========home-image=========== -->
+                    <div class="col homeImage d-flex flex-column justify-content-end">
+                        <img src="https://res.cloudinary.com/dj1omur11/image/upload/v1759598524/HomeImag_kmnke3.png"
+                            alt="Fashion Banner" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- ==========end-home-header=========== -->
+
+        <!-- ============start-brand============= -->
+        <div class="col-12 homeBrand mb-5">
+            <div class="container">
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-6 g-4 justify-content-between align-items-center">
+                    @for(brand of brands; track $index){
+                    <div class="col">
+                        <img [src]="brand.logoImg" [alt]="brand.name" class="img-fluid" style="height: 3.5rem;"
+                            (click)="goToBrand(brand.id)">
+                    </div>
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- =============end-brand============== -->
+
+        <!-- =========start-newArrivlas-products=========== -->
+        <div class="col-12">
+            <div class="container">
+                <h2 class="fontIntegral fw-bolder text-center my-5" style="font-size: 3rem;">New Arrivals</h2>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
+                    @for(product of products.slice(0,4); track $index){
+                    <app-product-card [product]="product"></app-product-card>
+                    }
+                </div>
+                <button class="btn btn-outline-dark d-block mx-auto mb-5 fs-3"
+                    style="border-radius: 2rem 2rem 1rem 1rem;" (click)="goToShop()">see more</button>
+            </div>
+        </div>
+        <!-- =========end-newArrivals-products=========== -->
+
+        <!-- =========start-topSelling-products=========== -->
+        <div class="col-12">
+            <div class="container">
+                <h2 class="fontIntegral fw-bolder text-center my-5" style="font-size: 3rem;">Top Selling</h2>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 mb-5">
+                    @for(product of products.slice(4,8); track $index){
+                    <app-product-card [product]="product"></app-product-card>
+                    }
+                </div>
+                <button class="btn btn-outline-dark d-block mx-auto mb-5 fs-3"
+                    style="border-radius: 2rem 2rem 1rem 1rem;" (click)="goToShop()">see more</button>
+            </div>
+        </div>
+        <!-- =========end-topSelling-products=========== -->
+
+        <!-- =============start-Categores=============== -->
+        <div class="col-12">
+            <div class="container categoryContainer">
+                <h2 class="fontIntegral fw-bolder text-center my-5" style="font-size: 3rem;">Browse by Category</h2>
+
+                <div class="row .row-cols-1 row-cols-sm-2 row-cols-lg-4 g-4 mb-5">
+                    @for(category of categories.slice(0,4); track $index){
+                    <div class="col">
+                        <div class="categoryImgContainer shadow" (click)="goToCategory(category.id)">
+                            <img [src]="category.catImg" [alt]="category.name"
+                                class="img-fluid w-100 categoryImg shadow">
+                        </div>
+                    </div>
+                    }
+                </div>
+                @if(categories.length>0){
+                <div class="categoryImgContainer shadow" (click)="goToCategory(categories[4].id)">
+                    <img [src]="categories[4].catImg" [alt]="categories[4].name"
+                        class="img-fluid w-100 categoryImg shadow">
+                </div>
+                }
+            </div>
+        </div>
+        <!-- =============end-Categores=============== -->
+
+
+
+    </div>
+</div>

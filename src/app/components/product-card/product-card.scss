@@ -1,0 +1,63 @@
+.prodCard {
+  // border: none;
+  border-radius: 1.6rem !important;
+  overflow: hidden;
+  // transition: transform 0.3s, box-shadow 0.3s;
+  // cursor: pointer;
+}
+.prodCard:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.prodCard .prodPrice {
+  position: absolute;
+  bottom: -1rem;
+  right: 0.5rem;
+  background-color: var(--red-color);
+  color: var(--white);
+  padding: 0.5rem 1rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  border-radius: 1rem 1rem 2rem 2rem;
+}
+.prodCard .prodImg {
+  border-radius: 1rem 7rem 1rem 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  background-color: var(--bg-white-2);
+}
+.prodCard .prodHeart {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 1.8rem;
+  color: var(--red-color-light);
+  cursor: pointer;
+}
+.prodCard .prodHeart.isFav {
+  color: var(--red-color);
+}
+.prodCard .prodHeart:hover {
+  color: var(--red-color);
+}
+
+.prodCard .prodSizes .prodSizeBtn.selected {
+  background-color: var(--black);
+  color: var(--white);
+}
+
+.prodCard .prodColors .prdColor {
+  width: 2.5rem;
+  height: 2.5rem;
+  cursor: pointer;
+  box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3);
+}
+.prodCard .prodColors .prdColor.selected {
+  border: 0.1rem solid var(--black) !important;
+}
+
+// .prodColors .prdColor {
+//   width: 3rem;
+//   height: 3rem;
+//   cursor: pointer;
+//   box-shadow: 0 0 0.3rem rgba(0, 0, 0, 0.3);
+// }

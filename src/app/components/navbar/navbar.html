@@ -1,0 +1,99 @@
+<div class="headerNav w-100 ">
+    <div class="container">
+        <div class="row justify-content-between align-items-center">
+            <!-- =============logo================= -->
+            <div class="col-auto">
+                <div class="row align-items-center">
+                    <div class=" col-auto center navIcon d-md-none d-flex" (click)="toggleNavbar()">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <div class="col-auto logo">
+                        <a class="mb-0 fs-1 fw-bolder fontIntegral" routerLink="/Home">Shop.Co</a>
+                    </div>
+                </div>
+            </div>
+            <!-- =============navbar================= -->
+            <nav class="navBar col-auto d-flex gap-5 align-items-center" [ngClass]="{'active': isNavbarOpen}">
+                <a class="pageLink" routerLink="/Home" routerLinkActive="activePage">Home</a>
+                <a class="pageLink" routerLink="/Shop" routerLinkActive="activePage">Shop</a>
+                <a class="pageLink" routerLink="/Favorits" routerLinkActive="activePage">Favorits</a>
+                <a class="pageLink" routerLink="/Cart" routerLinkActive="activePage">Cart</a>
+                <!-- <a class="pageLink">Brands</a> -->
+            </nav>
+            <!-- =============searchinput================= -->
+            <div class="searchInput col-md-2 col-lg-4 d-flex align-items-center gap-3 "
+                [ngClass]="{'active': isSearchOpen}">
+                <i class="fa-solid fa-magnifying-glass fs-2" (click)="onSearch()" style="cursor: pointer;"></i>
+                <input type="text" name="search" placeholder="Search for products" [(ngModel)]="searchQuery"
+                    (keyup.enter)="onSearch()">
+            </div>
+            <!-- =============icons================= -->
+            <div class="col-auto d-flex gap-2">
+                <i class="fa-solid fa-magnifying-glass navIcon center d-md-none d-flex" (click)="toggleSearch()"></i>
+                <!-- ------------------cart-------------------- -->
+                <i class="fa-solid fa-shopping-cart navIcon center position-relative" (click)="toggleCart()">
+                    <span class="countOrder center">{{ orderCount }}</span>
+                </i>
+                <div class="navCart navBox rounded-3" [ngClass]="{'active':isCartOpen}">
+                    @if(cartItems.length){
+                    @for(item of cartItems ; track $index){
+                    <div class="row border-bottom border-2 border-dark-subtle mb-2 pb-4 mb-4 ">
+                        <div class="col-4">
+
+                            <img [src]="item.image" alt="{{item.productName}}" class="img-fluid w-100 rounded-3" />
+                        </div>
+                        <div class="col-8">
+                            <div class="d-flex align-items-center justify-content-between">
+                                <h4>{{item.productName}}</h4>
+                                <i class="fa-solid fa-trash text-danger" style="cursor: pointer;"
+                                    (click)="removeItem(item)"></i>
+                            </div>
+                            <h5 class="text-muted">color: {{item.color}}</h5>
+                            <h5 class="text-muted">Size: {{item.size}}</h5>
+                            <div class="row row-cols-2 align-items-center">
+                                <h4>{{item.unitPrice * item.quantity | currency:'EGP':'symbol':'1.0-0'}}</h4>
+                                <div
+                                    class="d-flex align-items-center justify-content-between bg-body-secondary rounded-5 py-2 px-4">
+                                    <!-- ------------decrease-Quantity----------- -->
+                                    <button class="btn p-0 border-0 bg-transparent" (click)="decreaseQuantity(item)"
+                                        [disabled]="item.quantity === 1">
+                                        <i class="fa-solid fa-minus"></i>
+                                    </button>
+                                    <!-- ----------quantity---------- -->
+                                    {{item.quantity}}
+                                    <!-- ------------increase-Quantity----------- -->
+                                    <button class="btn p-0 border-0 bg-transparent" (click)="increaseQuantity(item)">
+                                        <i class="fa-solid fa-plus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    }
+                    <hr />
+                    <div class="row row-cols-2 align-items-center">
+                        <div class="fw-bold fs-3">Total: {{totalPrice | currency:'EGP':'symbol':'1.0-0'}}</div>
+                        <button class="btn btn-outline-dark fs-3 rounded-4" (click)="goToCheckout()">checkout</button>
+                    </div>
+                    }
+                    @else {
+                    <div>
+
+                        <h2 class="text-center text-muted fontIntegral">Cart is empty</h2>
+                        <img src="https://res.cloudinary.com/dj1omur11/image/upload/v1760375560/shopping_slskfs.png"
+                            alt="cart" class="img-fluid w-100">
+                    </div>
+                    }
+
+                </div>
+
+
+                <!-- -------------------user----------------------- -->
+                <i class="fa-solid fa-circle-user navIcon center" (click)="toggleUser()"></i>
+                <div class="navUser navBox rounded-3" [ngClass]="{'active':isUserOpen}">
+                    user
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

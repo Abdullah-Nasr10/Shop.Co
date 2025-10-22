@@ -1,0 +1,112 @@
+<div class="container">
+
+
+    <div class="row mt-5 shopPage">
+        <div class="col-12 col-lg-2 filterContainer">
+            <!-- ==========filters=========== -->
+            <div class="filters border border-2 border-dark-subtle rounded p-3 mt-5 ">
+                <!-- ============filter-header============= -->
+                <div class="d-flex justify-content-between align-items-center mb-4">
+                    <h1 class="fontIntegral my-3 fw-normal" style="font-size: 2.5rem;">Filters</h1>
+                    <i class="fa-solid fa-sliders fs-2"></i>
+                </div>
+                <!-- ============category==================  -->
+                <div class="mb-4">
+                    <h2 class="mb-3 fw-bold">Category</h2>
+                    <div class="d-flex flex-column gap-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="Pants" class="fs-4">Pants</label>
+                            <input type="checkbox" id="Pants" name="Pants" (change)="toggleCategory(1, $event)" />
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="Shorts" class="fs-4">Shorts</label>
+                            <input type="checkbox" id="Shorts" name="Shorts" (change)="toggleCategory(2, $event)" />
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="LongSleeveShirt" class="fs-4">Long Sleeve Shirt</label>
+                            <input type="checkbox" id="LongSleeveShirt" name="LongSleeveShirt"
+                                (change)="toggleCategory(3, $event)" />
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="shortSleeveShirt" class="fs-4">Short Sleeve Shirt</label>
+                            <input type="checkbox" id="shortSleeveShirt" name="shortSleeveShirt"
+                                (change)="toggleCategory(4, $event)" />
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="TShirt" class="fs-4">T-Shirt</label>
+                            <input type="checkbox" id="TShirt" name="TShirt" (change)="toggleCategory(5, $event)" />
+                        </div>
+                    </div>
+                </div>
+                <!-- ============brand================== -->
+                <div class="mb-4">
+                    <h2 class="mb-3 fw-bold">Brand</h2>
+                    <div class="d-flex flex-column gap-2">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="zara" class="fs-4">Zara</label>
+                            <input type="checkbox" id="zara" name="zara" (change)="toggleBrand(1, $event)" />
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="prada" class="fs-4">Prada</label>
+                            <input type="checkbox" id="prada" name="prada" (change)="toggleBrand(2, $event)" />
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="versace" class="fs-4">Versace</label>
+                            <input type="checkbox" id="versace" name="versace" (change)="toggleBrand(3, $event)" />
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="gucci" class="fs-4">Gucci</label>
+                            <input type="checkbox" id="gucci" name="gucci" (change)="toggleBrand(4, $event)" />
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <label for="calvinKlsin" class="fs-4">Calvin Klsin</label>
+                            <input type="checkbox" id="calvinKlsin" name="calvinKlsin"
+                                (change)="toggleBrand(5, $event)" />
+                        </div>
+                    </div>
+                </div>
+                <hr class="my-4" />
+                <!-- ==========price-range================ -->
+                <div class="mb-4">
+                    <h2 class="mb-3 fw-bold">Price Range</h2>
+                    <div class="d-flex align-items-center gap-3">
+                        <span class="fs-4">0</span>
+                        <input type="range" class="form-range w-75" min="0" max="2000" step="100" id="customRange3"
+                            [(ngModel)]="selectedPrice" />
+                        <span class="fs-4 ms-auto">{{selectedPrice}}</span>
+                    </div>
+                    <div class="text-center applyPrice">
+                        <button class="btn btn-dark fs-4 my-3" (click)="applyPriceFilter()">Apply</button>
+                    </div>
+                </div>
+                <hr class="my-4" />
+                <!-- ==========color================ -->
+                <div class="mb-4 colors">
+                    <h2 class="mb-3 fw-bold">Color</h2>
+                    <div class="d-flex flex-wrap gap-3">
+                        @for (color of colors; track $index) {
+
+                        <span class="rounded-circle border position-relative" [ngStyle]="{backgroundColor: color}"
+                            (click)=" selectColor(color)">
+                            @if(color===selectedColor) {
+                            <i
+                                class="fa-solid fa-check text-dark-emphasis position-absolute top-50 start-50 translate-middle fs-3">
+                            </i>
+                            }
+                        </span>
+                        }
+                    </div>
+                </div>
+                <hr class="my-4" />
+                <!-- ==========clear-filters================ -->
+                <div class="text-center clearFilters">
+                    <button class="btn btn-outline-dark fs-4 my-3" (click)="clearAllFilters()">Clear All
+                        Filters</button>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-lg-10">
+            <app-products [filteredProducts]="filteredProducts"></app-products>
+        </div>
+    </div>
+</div>
