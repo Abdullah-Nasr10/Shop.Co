@@ -1,91 +1,36 @@
-# 🛍️ Shop.co — Angular Clothing Store
+# 🛍️ Shop.co — Local Development
 
-> This project was developed as part of **ITI training (Full Stack Track)**.
+Shop.co — an Angular clothing store project developed as part of ITI Full Stack training. Built with Angular, Bootstrap, and SCSS. Includes AI-powered search, product filtering, and favorites.
 
-Shop.co is a modern **e-commerce web application** for selling clothes, built using **Angular**, **Bootstrap**, and **SCSS**.  
-It features a clean UI, responsive design, and smart product management functionalities.
+## Features
+- AI-powered search
+- Product filtering (category / price / type)
+- Favorites management
+- Mock backend with JSON Server
+- Responsive UI (Bootstrap + SCSS)
 
-The project also includes **AI-powered search**, product **filtering**, and **favorites management**, providing a smooth and interactive shopping experience.
+## Project layout
+- server/ — JSON Server data (e.g., server/db.json)
+- src/ — Angular app
 
----
-
-## 🚀 Features
-
-- 🧠 **AI-powered Search:** Suggests relevant products dynamically.  
-- 🛍️ **Product Filtering:** Filter items by category, price, or type.  
-- ❤️ **Favorites System:** Save and manage favorite products easily.  
-- 🧩 **JSON Server Integration:** Mock backend for handling product data.  
-- 💎 **Responsive Design:** Built with Bootstrap and SCSS for full adaptability.  
-- ⚡ **Reactive State Handling:** Implemented using Angular Services and BehaviorSubject.  
-
----
-
-## 🧱 Project Structure
-
-This project consists of two main parts:
-
-1. **Backend (Mock API using JSON Server)**  
-2. **Frontend (Angular Application)**  
-
----
-
-## ⚙️ 1. Backend Setup (JSON Server)
-
-1. Open the `server` folder in your terminal.  
-2. Install dependencies:
-   ```bash
-   npm install
-   
-# ShopCo — Local Development
-
-This repository uses a JSON Server as a mock backend and an Angular frontend.
-
-## 1. Start the JSON Server (Mock API)
-From the project root:
-
+## 1. Backend (JSON Server)
+Open a terminal in the server folder and run:
 ```powershell
-npm start
+cd server
+npm install
+json-server db.json
 ```
+The mock API runs at: http://localhost:3000
 
-This runs the mock API (default: http://localhost:3000).
-
-## 2. Frontend Setup (Angular App)
-Open the Angular project folder in a separate terminal.
-
-Install dependencies:
-
+## 2. Frontend (Angular)
+Open a new terminal at the project root (or src/) and run:
 ```powershell
 npm install
+ng serve -o
 ```
+The app opens at: http://localhost:4200
 
-Run the Angular dev server:
-
-```powershell
-ng serve
-```
-
-Open your browser:
-
-http://localhost:4200
-
-## Notes
-- Ensure the JSON Server is running before starting the Angular app.
-- To change backend port or endpoint, update the URL in the Angular service (e.g., `src/app/Services/product-service.ts`) or your environment setup.
-- Make sure Node.js and Angular CLI are installed globally:
-
-```powershell
-npm install -g @angular/cli
-```
-
-- If you face package/version issues:
-
-```powershell
-rm -rf node_modules
-npm install
-```
-
-- Modify mock data in `server/db.json` to add or update products.
-
-## Security
-- Do not commit secrets (API keys) to the repo. Use environment variables, CI/CD secret injection, or a server-side proxy to keep keys secret.
-- If you generate `src/environments/environment.generated.ts` during build, consider adding it to `.gitignore` if you don't want it tracked.
+## Quick notes
+- Edit `server/db.json` to add or update products.
+- Make sure JSON Server is running before using the app.
+- If you change the backend port or endpoint, update the URL in `src/app/Services/product-service.ts`.
