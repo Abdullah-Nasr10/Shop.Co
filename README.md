@@ -1,59 +1,91 @@
-# ShopCo
+# 🛍️ Shop.co — Angular Clothing Store
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+> This project was developed as part of **ITI training (Full Stack Track)**.
 
-## Development server
+Shop.co is a modern **e-commerce web application** for selling clothes, built using **Angular**, **Bootstrap**, and **SCSS**.  
+It features a clean UI, responsive design, and smart product management functionalities.
 
-To start a local development server, run:
+The project also includes **AI-powered search**, product **filtering**, and **favorites management**, providing a smooth and interactive shopping experience.
 
-```bash
+---
+
+## 🚀 Features
+
+- 🧠 **AI-powered Search:** Suggests relevant products dynamically.  
+- 🛍️ **Product Filtering:** Filter items by category, price, or type.  
+- ❤️ **Favorites System:** Save and manage favorite products easily.  
+- 🧩 **JSON Server Integration:** Mock backend for handling product data.  
+- 💎 **Responsive Design:** Built with Bootstrap and SCSS for full adaptability.  
+- ⚡ **Reactive State Handling:** Implemented using Angular Services and BehaviorSubject.  
+
+---
+
+## 🧱 Project Structure
+
+This project consists of two main parts:
+
+1. **Backend (Mock API using JSON Server)**  
+2. **Frontend (Angular Application)**  
+
+---
+
+## ⚙️ 1. Backend Setup (JSON Server)
+
+1. Open the `server` folder in your terminal.  
+2. Install dependencies:
+   ```bash
+   npm install
+   
+# ShopCo — Local Development
+
+This repository uses a JSON Server as a mock backend and an Angular frontend.
+
+## 1. Start the JSON Server (Mock API)
+From the project root:
+
+```powershell
+npm start
+```
+
+This runs the mock API (default: http://localhost:3000).
+
+## 2. Frontend Setup (Angular App)
+Open the Angular project folder in a separate terminal.
+
+Install dependencies:
+
+```powershell
+npm install
+```
+
+Run the Angular dev server:
+
+```powershell
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Open your browser:
 
-## Code scaffolding
+http://localhost:4200
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## Notes
+- Ensure the JSON Server is running before starting the Angular app.
+- To change backend port or endpoint, update the URL in the Angular service (e.g., `src/app/Services/product-service.ts`) or your environment setup.
+- Make sure Node.js and Angular CLI are installed globally:
 
-```bash
-ng generate component component-name
+```powershell
+npm install -g @angular/cli
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- If you face package/version issues:
 
-```bash
-ng generate --help
+```powershell
+rm -rf node_modules
+npm install
 ```
 
-## Building
+- Modify mock data in `server/db.json` to add or update products.
 
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## Security
+- Do not commit secrets (API keys) to the repo. Use environment variables, CI/CD secret injection, or a server-side proxy to keep keys secret.
+- If you generate `src/environments/environment.generated.ts` during build, consider adding it to `.gitignore` if you don't want it tracked.
